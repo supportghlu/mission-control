@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mission Control 🫡</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-left">
+      <h1>Mission Control 🫡</h1>
+      <div class="subtitle">Boss Operations Hub — GHLU</div>
+    </div>
+    <div class="header-right">
+      <div class="clock" id="clock">--:--:--</div>
+      <div class="date" id="date">Loading...</div>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Morning Briefing -->
+    <section>
+      <div class="section-header">
+        <span class="icon">☀️</span> Morning Briefing
+      </div>
+      <div id="briefing"></div>
+    </section>
+
+    <!-- Projects & Tasks Grid -->
+    <div class="grid">
+      <section>
+        <div class="section-header">
+          <span class="icon">🚀</span> Projects
+        </div>
+        <div id="projects"></div>
+      </section>
+
+      <section>
+        <div class="section-header">
+          <span class="icon">📋</span> Task Queue
+        </div>
+        <div id="tasks"></div>
+      </section>
+    </div>
+
+    <!-- Decision Log -->
+    <section class="decisions">
+      <div class="section-header">
+        <span class="icon">⚖️</span> Decision Log
+      </div>
+      <div id="decisions"></div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <span id="refresh-time">Loading...</span> · Auto-refreshes every 60s
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

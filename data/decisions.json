@@ -1,0 +1,50 @@
+[
+  {
+    "id": "dec-001",
+    "date": "2026-03-06",
+    "title": "Codex as primary coding agent",
+    "context": "Needed a dedicated coding muscle for building internal tools and infrastructure",
+    "decision": "Set up Codex via ACP with OpenAI API key as the default coding agent",
+    "reasoning": "Highest leverage addition — dedicated coding agent for building tools, automations, and prototypes"
+  },
+  {
+    "id": "dec-002",
+    "date": "2026-03-06",
+    "title": "Hold on Grok/xAI integration",
+    "context": "Grok offers real-time X/Twitter data for social trend monitoring",
+    "decision": "Defer until a social monitoring project is active",
+    "reasoning": "No active project requiring social data. Will revisit when relevant."
+  },
+  {
+    "id": "dec-003",
+    "date": "2026-03-06",
+    "title": "Company-mirroring agent architecture",
+    "context": "Needed a scalable agent structure that maps to business functions",
+    "decision": "Designed 5-department hierarchy: Growth, Fulfilment, Client Success, Operations, Research & Intelligence with QA and Knowledge layers",
+    "reasoning": "Mirrors real company org structure — easier to scale, reason about, and align with how the business operates"
+  },
+  {
+    "id": "dec-004",
+    "date": "2026-03-06",
+    "title": "Phase 1: Boss + Codex only",
+    "context": "Full agent architecture defined but workload doesn't yet justify multiple persistent agents",
+    "decision": "Start with Boss playing all roles, promote agents when workload demands it",
+    "reasoning": "Don't over-engineer on day one. Earn the complexity through volume of work."
+  },
+  {
+    "id": "dec-005",
+    "date": "2026-03-06",
+    "title": "Replit for website demo cloning",
+    "context": "Multiple options evaluated: build-own pipeline, smart overlay, or automate existing Replit process",
+    "decision": "Automate the existing manual Replit process via browser automation",
+    "reasoning": "Manual process already works well. Automating what works > rebuilding from scratch. Can use Replit publish links."
+  },
+  {
+    "id": "dec-006",
+    "date": "2026-03-06",
+    "title": "Strategic partnership working model",
+    "context": "Defining how Boss and Orien collaborate",
+    "decision": "Proactive autonomous collaborator. Overnight work during 19:00-08:00 GMT+1. Morning reports + WhatsApp summary.",
+    "reasoning": "Orien wants to wake up to progress. Internal work = autonomous, external-facing = ask first."
+  }
+]

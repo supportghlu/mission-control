@@ -1,0 +1,68 @@
+[
+  {
+    "id": "proj-001",
+    "name": "Mission Control Dashboard",
+    "objective": "Build a custom operations hub for tracking all projects, tasks, and overnight work",
+    "status": "done",
+    "priority": "high",
+    "currentStatus": "V1 complete — dark theme dashboard with project tracking, task queue, overnight reports, and decision log. Open mission-control/index.html to view.",
+    "nextSteps": ["Review with Orien", "Add V2 features based on feedback"],
+    "blockers": [],
+    "updatedAt": "2026-03-06T21:00:00.000Z"
+  },
+  {
+    "id": "proj-002",
+    "name": "Client Onboarding Redesign",
+    "objective": "Reduce onboarding TTV from 21 days to 5 days",
+    "status": "done",
+    "priority": "high",
+    "currentStatus": "Achieved — SOPs, back-end tech team, and account managers in place. Future goal: automate with AI/agents.",
+    "nextSteps": ["Explore automation opportunities to reduce people-dependency"],
+    "blockers": [],
+    "updatedAt": "2026-03-06T13:00:00.000Z"
+  },
+  {
+    "id": "proj-003",
+    "name": "AI Website Demo Generator",
+    "objective": "Automatically generate AI-enabled demo websites for prospects to increase conversion rates",
+    "status": "in-progress",
+    "priority": "high",
+    "currentStatus": "Orchestration service being built. GHL API key obtained. Replit integration pending credentials.",
+    "nextSteps": ["Build orchestration service", "Get Replit credentials", "Test with footprint-tools.com", "Connect GHL webhook"],
+    "blockers": ["Awaiting Replit login credentials"],
+    "updatedAt": "2026-03-06T18:00:00.000Z"
+  },
+  {
+    "id": "proj-004",
+    "name": "Agent Architecture",
+    "objective": "Design company-mirroring agent org structure with departments, QA, and knowledge layers",
+    "status": "done",
+    "priority": "high",
+    "currentStatus": "Full architecture documented in ARCHITECTURE.md. Phase 1 active: Boss + Codex.",
+    "nextSteps": ["Promote agents to departments as workload demands"],
+    "blockers": [],
+    "updatedAt": "2026-03-06T13:15:00.000Z"
+  },
+  {
+    "id": "proj-005",
+    "name": "Client Acquisition System",
+    "objective": "Build predictable system generating $100k/month in revenue",
+    "status": "planning",
+    "priority": "high",
+    "currentStatus": "Initial funnel structure documented. Awaiting detailed numbers from Orien on current acquisition performance.",
+    "nextSteps": ["Get current acquisition metrics from Orien", "Design full funnel architecture", "Model revenue targets"],
+    "blockers": ["Need current conversion rates, ad spend, and close rates from Orien"],
+    "updatedAt": "2026-03-06T17:30:00.000Z"
+  },
+  {
+    "id": "proj-006",
+    "name": "SOP Library",
+    "objective": "Create structured SOP framework for all core business processes",
+    "status": "planning",
+    "priority": "medium",
+    "currentStatus": "Not started. Framework design pending.",
+    "nextSteps": ["Design SOP template structure", "Identify core processes to document first"],
+    "blockers": [],
+    "updatedAt": "2026-03-06T13:00:00.000Z"
+  }
+]

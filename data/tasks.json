@@ -1,0 +1,102 @@
+[
+  {
+    "id": "task-001",
+    "title": "Build Mission Control V1",
+    "description": "Dark theme dashboard with project tracker, task queue, overnight reports, and decision log",
+    "status": "done",
+    "project": "proj-001",
+    "priority": "high",
+    "createdAt": "2026-03-06T12:49:00.000Z",
+    "completedAt": "2026-03-07T07:30:00.000Z"
+  },
+  {
+    "id": "task-002",
+    "title": "Build AI Demo Generator service",
+    "description": "Node.js orchestration service with webhook endpoint, URL validation, GHL integration, and Replit automation",
+    "status": "done",
+    "project": "proj-003",
+    "priority": "high",
+    "createdAt": "2026-03-06T17:45:00.000Z",
+    "completedAt": "2026-03-07T07:30:00.000Z"
+  },
+  {
+    "id": "task-009",
+    "title": "Deploy AI Demo Generator to Railway",
+    "description": "Deploy the service to get a public webhook URL for GHL integration",
+    "status": "queued",
+    "project": "proj-003",
+    "priority": "high",
+    "createdAt": "2026-03-07T07:30:00.000Z",
+    "completedAt": null
+  },
+  {
+    "id": "task-010",
+    "title": "Implement Replit browser automation",
+    "description": "Build Playwright automation to clone websites via Replit Agent",
+    "status": "queued",
+    "project": "proj-003",
+    "priority": "high",
+    "createdAt": "2026-03-07T07:30:00.000Z",
+    "completedAt": null
+  },
+  {
+    "id": "task-003",
+    "title": "Design acquisition system architecture",
+    "description": "Full funnel blueprint with channels, conversion targets, cost assumptions, and automation map",
+    "status": "queued",
+    "project": "proj-005",
+    "priority": "high",
+    "createdAt": "2026-03-06T13:00:00.000Z",
+    "completedAt": null
+  },
+  {
+    "id": "task-004",
+    "title": "Get current acquisition metrics from Orien",
+    "description": "Need: conversion rates per channel, ad spend, close rate, current MRR, clients/month, main bottleneck",
+    "status": "waiting-input",
+    "project": "proj-005",
+    "priority": "high",
+    "createdAt": "2026-03-06T17:30:00.000Z",
+    "completedAt": null
+  },
+  {
+    "id": "task-005",
+    "title": "Get Replit login credentials",
+    "description": "Need Replit email/password for browser automation of website cloning pipeline",
+    "status": "waiting-input",
+    "project": "proj-003",
+    "priority": "high",
+    "createdAt": "2026-03-06T17:45:00.000Z",
+    "completedAt": null
+  },
+  {
+    "id": "task-006",
+    "title": "Get GHL API access",
+    "description": "GoHighLevel API key for CRM integration",
+    "status": "done",
+    "project": "proj-003",
+    "priority": "high",
+    "createdAt": "2026-03-06T12:48:00.000Z",
+    "completedAt": "2026-03-06T17:43:00.000Z"
+  },
+  {
+    "id": "task-007",
+    "title": "Set up Grok/xAI when social monitoring project starts",
+    "description": "Orien wants social trend monitoring but no active project yet. Remind when relevant.",
+    "status": "queued",
+    "project": null,
+    "priority": "low",
+    "createdAt": "2026-03-06T12:44:00.000Z",
+    "completedAt": null
+  },
+  {
+    "id": "task-008",
+    "title": "Set up Brave Search API",
+    "description": "Web search tool needs Brave API key to function. Currently broken.",
+    "status": "queued",
+    "project": null,
+    "priority": "medium",
+    "createdAt": "2026-03-06T17:11:00.000Z",
+    "completedAt": null
+  }
+]
