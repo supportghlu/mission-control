@@ -21,19 +21,29 @@
   },
   {
     "id": "task-009",
-    "title": "Deploy AI Demo Generator to Railway",
-    "description": "Deploy the service to get a public webhook URL for GHL integration",
-    "status": "queued",
+    "title": "Deploy AI Demo Generator",
+    "description": "Deploy the service to Render with env vars configured",
+    "status": "done",
     "project": "proj-003",
     "priority": "high",
     "createdAt": "2026-03-07T07:30:00.000Z",
-    "completedAt": null
+    "completedAt": "2026-03-16T17:22:00.000Z"
+  },
+  {
+    "id": "task-011",
+    "title": "Deploy Mission Control to Render",
+    "description": "Static site on Render with auto-deploy from GitHub",
+    "status": "done",
+    "project": "proj-001",
+    "priority": "high",
+    "createdAt": "2026-03-16T17:38:00.000Z",
+    "completedAt": "2026-03-16T17:40:00.000Z"
   },
   {
     "id": "task-010",
     "title": "Implement Replit browser automation",
     "description": "Build Playwright automation to clone websites via Replit Agent",
-    "status": "queued",
+    "status": "in-progress",
     "project": "proj-003",
     "priority": "high",
     "createdAt": "2026-03-07T07:30:00.000Z",
@@ -62,12 +72,12 @@
   {
     "id": "task-005",
     "title": "Get Replit login credentials",
-    "description": "Need Replit email/password for browser automation of website cloning pipeline",
-    "status": "waiting-input",
+    "description": "Replit account for browser automation of website cloning pipeline",
+    "status": "done",
     "project": "proj-003",
     "priority": "high",
     "createdAt": "2026-03-06T17:45:00.000Z",
-    "completedAt": null
+    "completedAt": "2026-03-16T16:10:00.000Z"
   },
   {
     "id": "task-006",
@@ -92,7 +102,7 @@
   {
     "id": "task-008",
     "title": "Set up Brave Search API",
-    "description": "Web search tool needs Brave API key to function. Currently broken.",
+    "description": "Web search tool needs Brave API key to function.",
     "status": "queued",
     "project": null,
     "priority": "medium",
