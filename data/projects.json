@@ -6,7 +6,9 @@
     "status": "done",
     "priority": "high",
     "currentStatus": "V1 complete and deployed to Render. Auto-updates via GitHub push. Live at mission-control-vowh.onrender.com",
-    "nextSteps": ["Auto-update data from agent activity (in progress)"],
+    "nextSteps": [
+      "Auto-update data from agent activity (in progress)"
+    ],
     "blockers": [],
     "updatedAt": "2026-03-17T08:38:00.000Z"
   },
@@ -16,8 +18,10 @@
     "objective": "Reduce onboarding TTV from 21 days to 5 days",
     "status": "done",
     "priority": "high",
-    "currentStatus": "Achieved — SOPs, back-end tech team, and account managers in place. Future goal: automate with AI/agents.",
-    "nextSteps": ["Explore automation opportunities to reduce people-dependency"],
+    "currentStatus": "Achieved \u2014 SOPs, back-end tech team, and account managers in place. Future goal: automate with AI/agents.",
+    "nextSteps": [
+      "Explore automation opportunities to reduce people-dependency"
+    ],
     "blockers": [],
     "updatedAt": "2026-03-06T13:00:00.000Z"
   },
@@ -27,9 +31,16 @@
     "objective": "Automatically generate AI-enabled demo websites for prospects to increase conversion rates",
     "status": "done",
     "priority": "high",
-    "currentStatus": "✅ v2.0 LIVE. Self-hosted AI cloner fully working. First successful end-to-end test 2026-03-17 (footprint-tools.com → 30 seconds). Both Anthropic + OpenAI keys configured on Render.",
-    "nextSteps": ["Fix GHL API auth (expired JWT — need fresh key)", "Connect email workflow to GHL", "Set up custom demo domain", "Tune AI prompts for better clone quality"],
-    "blockers": ["GHL API key expired (401 Invalid JWT)"],
+    "currentStatus": "\u2705 v2.0 LIVE. Self-hosted AI cloner fully working. First successful end-to-end test 2026-03-17 (footprint-tools.com \u2192 30 seconds). Both Anthropic + OpenAI keys configured on Render.",
+    "nextSteps": [
+      "Fix GHL API auth (expired JWT \u2014 need fresh key)",
+      "Connect email workflow to GHL",
+      "Set up custom demo domain",
+      "Tune AI prompts for better clone quality"
+    ],
+    "blockers": [
+      "GHL API key expired (401 Invalid JWT)"
+    ],
     "updatedAt": "2026-03-17T08:00:00.000Z"
   },
   {
@@ -39,7 +50,10 @@
     "status": "in-progress",
     "priority": "high",
     "currentStatus": "Full architecture documented. Phase 1 active: Boss (Opus) + sub-agents (Sonnet/Haiku). Model-per-agent strategy agreed. Agent spec template defined.",
-    "nextSteps": ["Promote agents to departments as workload demands", "Build agent spec template"],
+    "nextSteps": [
+      "Promote agents to departments as workload demands",
+      "Build agent spec template"
+    ],
     "blockers": [],
     "updatedAt": "2026-03-17T08:10:00.000Z"
   },
@@ -49,9 +63,15 @@
     "objective": "Build predictable system generating $100k/month in revenue",
     "status": "planning",
     "priority": "high",
-    "currentStatus": "Initial funnel structure documented. Meta Ads data now accessible — will feed into acquisition modelling.",
-    "nextSteps": ["Get current conversion rates and close rates from Orien", "Design full funnel architecture", "Model revenue targets"],
-    "blockers": ["Need current conversion rates, close rates from Orien"],
+    "currentStatus": "Initial funnel structure documented. Meta Ads data now accessible \u2014 will feed into acquisition modelling.",
+    "nextSteps": [
+      "Get current conversion rates and close rates from Orien",
+      "Design full funnel architecture",
+      "Model revenue targets"
+    ],
+    "blockers": [
+      "Need current conversion rates, close rates from Orien"
+    ],
     "updatedAt": "2026-03-17T08:35:00.000Z"
   },
   {
@@ -61,24 +81,30 @@
     "status": "planning",
     "priority": "medium",
     "currentStatus": "Not started. Framework design pending.",
-    "nextSteps": ["Design SOP template structure", "Identify core processes to document first"],
+    "nextSteps": [
+      "Design SOP template structure",
+      "Identify core processes to document first"
+    ],
     "blockers": [],
     "updatedAt": "2026-03-06T13:00:00.000Z"
   },
   {
     "id": "proj-007",
     "name": "Meta Ads AI Agent",
-    "objective": "Fully autonomous Meta Ads management — reporting, creative generation, auto-publishing, and feedback loops",
+    "objective": "Fully autonomous Meta Ads management \u2014 reporting, creative generation, auto-publishing, and feedback loops",
     "status": "in-progress",
     "priority": "high",
-    "currentStatus": "✅ Phase 1 (Analyst Agent) built, tested, and deploying to Render. Live URL: meta-ads-agent-65aj.onrender.com. Real data confirmed: 2 active campaigns — AI Voice ($31.85 CPL ✅) and AI-IFY-U ($112.49 CPL ⚠️).",
+    "currentStatus": "\u2705 Phase 1 LIVE. Meta API token connected (system user, no expiry). Deployed to Render with env vars. Daily cron report set for 7am GMT+1 \u2192 Slack (#meta-ads-reports) + WhatsApp. Slack channel created in internal workspace. Sample report sent successfully.",
     "nextSteps": [
-      "Phase 1: Wire daily 7am cron report to WhatsApp",
-      "Phase 2: Creative Engine (Dropbox→Google Drive + AI creative gen)",
-      "Phase 3: Auto-Publisher (approved ads → Meta)",
-      "Phase 4: Feedback Loop (Fathom call transcripts → new ad angles)"
+      "Phase 1: Fix WhatsApp delivery (linked but listener issue)",
+      "Phase 2: Creative Engine \u2014 need Google Drive API credentials",
+      "Phase 3: Auto-Publisher \u2014 need campaign structure preferences",
+      "Phase 4: Feedback Loop \u2014 need Fathom API access"
     ],
-    "blockers": [],
-    "updatedAt": "2026-03-17T08:38:00.000Z"
+    "blockers": [
+      "WhatsApp listener not connecting",
+      "Google Drive credentials for Phase 2"
+    ],
+    "updatedAt": "2026-03-17T09:45:00.000Z"
   }
 ]
