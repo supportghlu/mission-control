@@ -2,18 +2,18 @@
   {
     "id": "task-016",
     "title": "Build Meta Ads Analyst Agent (Phase 1)",
-    "description": "Node.js service: Meta API client, SQLite snapshots, report generator, analysis engine, dashboard. Claude Code building now.",
-    "status": "in-progress",
+    "description": "✅ Built and tested locally. Real data pulling from Meta API. Daily/weekly reports generating correctly. Ready for deployment.",
+    "status": "done",
     "project": "proj-007",
     "priority": "high",
     "createdAt": "2026-03-17T08:35:00.000Z",
-    "completedAt": null
+    "completedAt": "2026-03-17T08:43:00.000Z"
   },
   {
     "id": "task-017",
     "title": "Deploy Meta Ads Analyst to Render",
     "description": "Deploy analyst service to Render, configure env vars, set up daily 7am cron report to WhatsApp",
-    "status": "queued",
+    "status": "in-progress",
     "project": "proj-007",
     "priority": "high",
     "createdAt": "2026-03-17T08:35:00.000Z",
@@ -128,55 +128,5 @@
     "priority": "high",
     "createdAt": "2026-03-06T17:30:00.000Z",
     "completedAt": null
-  },
-  {
-    "id": "task-001",
-    "title": "Build Mission Control V1",
-    "description": "Dark theme dashboard with project tracker, task queue, overnight reports, and decision log",
-    "status": "done",
-    "project": "proj-001",
-    "priority": "high",
-    "createdAt": "2026-03-06T12:49:00.000Z",
-    "completedAt": "2026-03-07T07:30:00.000Z"
-  },
-  {
-    "id": "task-002",
-    "title": "Build AI Demo Generator service",
-    "description": "Node.js orchestration service with webhook endpoint, URL validation, GHL integration",
-    "status": "done",
-    "project": "proj-003",
-    "priority": "high",
-    "createdAt": "2026-03-06T17:45:00.000Z",
-    "completedAt": "2026-03-07T07:30:00.000Z"
-  },
-  {
-    "id": "task-009",
-    "title": "Deploy AI Demo Generator to Render",
-    "description": "Deployed to Render with env vars. Auto-deploys from GitHub.",
-    "status": "done",
-    "project": "proj-003",
-    "priority": "high",
-    "createdAt": "2026-03-07T07:30:00.000Z",
-    "completedAt": "2026-03-16T17:22:00.000Z"
-  },
-  {
-    "id": "task-010",
-    "title": "Build AI website cloner (v2)",
-    "description": "Self-hosted AI cloner: scrape → AI generate → inject widgets → deploy. First test passed (footprint-tools.com, 30s).",
-    "status": "done",
-    "project": "proj-003",
-    "priority": "high",
-    "createdAt": "2026-03-07T07:30:00.000Z",
-    "completedAt": "2026-03-17T08:00:00.000Z"
-  },
-  {
-    "id": "task-011",
-    "title": "Deploy Mission Control to Render",
-    "description": "Static site on Render with auto-deploy from GitHub",
-    "status": "done",
-    "project": "proj-001",
-    "priority": "high",
-    "createdAt": "2026-03-16T17:38:00.000Z",
-    "completedAt": "2026-03-16T17:40:00.000Z"
   }
 ]
