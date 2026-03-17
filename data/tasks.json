@@ -12,7 +12,7 @@
   {
     "id": "task-002",
     "title": "Build AI Demo Generator service",
-    "description": "Node.js orchestration service with webhook endpoint, URL validation, GHL integration, and Replit automation",
+    "description": "Node.js orchestration service with webhook endpoint, URL validation, GHL integration",
     "status": "done",
     "project": "proj-003",
     "priority": "high",
@@ -41,12 +41,32 @@
   },
   {
     "id": "task-010",
-    "title": "Implement Replit browser automation",
-    "description": "Build Playwright automation to clone websites via Replit Agent",
-    "status": "in-progress",
+    "title": "Build AI website cloner (v2)",
+    "description": "Self-hosted AI cloner: scrape → AI generate → inject widgets → deploy. Full pipeline working in ~33 seconds.",
+    "status": "done",
     "project": "proj-003",
     "priority": "high",
     "createdAt": "2026-03-07T07:30:00.000Z",
+    "completedAt": "2026-03-16T23:08:00.000Z"
+  },
+  {
+    "id": "task-012",
+    "title": "Improve clone quality (better AI model)",
+    "description": "Current output uses Haiku (weak model). Need OpenAI credits or proper Anthropic API key to use GPT-4o/Claude Sonnet for higher quality clones.",
+    "status": "waiting-input",
+    "project": "proj-003",
+    "priority": "high",
+    "createdAt": "2026-03-16T23:00:00.000Z",
+    "completedAt": null
+  },
+  {
+    "id": "task-013",
+    "title": "Fix GHL API authentication",
+    "description": "Current GHL API key returns 401 Invalid JWT. Need valid v2 API key for CRM updates.",
+    "status": "waiting-input",
+    "project": "proj-003",
+    "priority": "high",
+    "createdAt": "2026-03-16T23:00:00.000Z",
     "completedAt": null
   },
   {
@@ -90,9 +110,29 @@
     "completedAt": "2026-03-06T17:43:00.000Z"
   },
   {
+    "id": "task-014",
+    "title": "Connect GHL email workflow",
+    "description": "Set up GHL workflow webhook to automatically send demo emails to prospects",
+    "status": "queued",
+    "project": "proj-003",
+    "priority": "medium",
+    "createdAt": "2026-03-16T23:00:00.000Z",
+    "completedAt": null
+  },
+  {
+    "id": "task-015",
+    "title": "Set up demo custom domain",
+    "description": "Point demo.ghluni.com to Render for cleaner demo URLs",
+    "status": "queued",
+    "project": "proj-003",
+    "priority": "low",
+    "createdAt": "2026-03-16T23:00:00.000Z",
+    "completedAt": null
+  },
+  {
     "id": "task-007",
     "title": "Set up Grok/xAI when social monitoring project starts",
-    "description": "Orien wants social trend monitoring but no active project yet. Remind when relevant.",
+    "description": "Orien wants social trend monitoring but no active project yet.",
     "status": "queued",
     "project": null,
     "priority": "low",
