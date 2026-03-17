@@ -33,11 +33,11 @@
   },
   {
     "id": "dec-005",
-    "date": "2026-03-06",
-    "title": "Replit for website demo cloning",
-    "context": "Multiple options evaluated: build-own pipeline, smart overlay, or automate existing Replit process",
-    "decision": "Automate the existing manual Replit process via browser automation",
-    "reasoning": "Manual process already works well. Automating what works > rebuilding from scratch. Can use Replit publish links."
+    "date": "2026-03-16",
+    "title": "Self-hosted AI cloner over Replit",
+    "context": "Replit browser automation was fragile and unreliable. No public API for Replit Agent.",
+    "decision": "Built self-hosted AI pipeline: scrape → AI generate → inject widgets → deploy. Dropped Replit entirely.",
+    "reasoning": "Full control, no third-party dependency, faster execution (30s vs minutes), easier to maintain and scale."
   },
   {
     "id": "dec-006",
@@ -46,5 +46,29 @@
     "context": "Defining how Boss and Orien collaborate",
     "decision": "Proactive autonomous collaborator. Overnight work during 19:00-08:00 GMT+1. Morning reports + WhatsApp summary.",
     "reasoning": "Orien wants to wake up to progress. Internal work = autonomous, external-facing = ask first."
+  },
+  {
+    "id": "dec-007",
+    "date": "2026-03-17",
+    "title": "Model-per-agent cost strategy",
+    "context": "Running all agents on Opus is expensive and unnecessary for routine tasks",
+    "decision": "Boss stays on Opus (strategic work). Sub-agents use Sonnet (analysis/reasoning) or Haiku (execution). Each agent spec defines its model.",
+    "reasoning": "Like staffing — senior operator (Opus) coordinates, specialists (Sonnet/Haiku) execute defined tasks. 5-75x cost savings on sub-agents."
+  },
+  {
+    "id": "dec-008",
+    "date": "2026-03-17",
+    "title": "Meta Ads AI Agent — 4-phase build",
+    "context": "Orien wants fully autonomous Meta Ads management inspired by a 7-figure autonomous ad agent",
+    "decision": "Phase 1: Analyst (daily reports) → Phase 2: Creative Engine (Google Drive + AI gen) → Phase 3: Auto-Publisher → Phase 4: Feedback Loop (Fathom)",
+    "reasoning": "Each phase delivers standalone value. Phase 1 is immediately useful and validates the Meta API integration before building auto-publishing."
+  },
+  {
+    "id": "dec-009",
+    "date": "2026-03-17",
+    "title": "Google Drive over Dropbox for content intake",
+    "context": "Original plan used Dropbox for raw content upload. Orien uses Google Drive.",
+    "decision": "Use Google Drive API instead of Dropbox for the creative content pipeline",
+    "reasoning": "Use what's already in the stack. No need to introduce a new tool."
   }
 ]
