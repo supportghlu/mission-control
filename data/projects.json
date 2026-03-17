@@ -5,10 +5,10 @@
     "objective": "Build a custom operations hub for tracking all projects, tasks, and overnight work",
     "status": "done",
     "priority": "high",
-    "currentStatus": "V1 complete — dark theme dashboard with project tracking, task queue, overnight reports, and decision log. Open mission-control/index.html to view.",
-    "nextSteps": ["Review with Orien", "Add V2 features based on feedback"],
+    "currentStatus": "V1 complete and deployed to Render. Auto-updates via GitHub push.",
+    "nextSteps": ["Add V2 features based on feedback"],
     "blockers": [],
-    "updatedAt": "2026-03-06T21:00:00.000Z"
+    "updatedAt": "2026-03-16T17:40:00.000Z"
   },
   {
     "id": "proj-002",
@@ -27,10 +27,10 @@
     "objective": "Automatically generate AI-enabled demo websites for prospects to increase conversion rates",
     "status": "in-progress",
     "priority": "high",
-    "currentStatus": "Orchestration service being built. GHL API key obtained. Replit integration pending credentials.",
-    "nextSteps": ["Build orchestration service", "Get Replit credentials", "Test with footprint-tools.com", "Connect GHL webhook"],
-    "blockers": ["Awaiting Replit login credentials"],
-    "updatedAt": "2026-03-06T18:00:00.000Z"
+    "currentStatus": "Pipeline working end-to-end (~33s). Scrape → AI clone → inject widgets → deploy. Visual quality limited by Haiku model — needs GPT-4o or Claude Sonnet.",
+    "nextSteps": ["Get better AI model access (top up OpenAI or get Anthropic key)", "Fix GHL API auth (401 error)", "Connect email workflow", "Set up custom demo domain"],
+    "blockers": ["AI model quality — need OpenAI credits or Anthropic API key", "GHL API key returning 401"],
+    "updatedAt": "2026-03-16T23:08:00.000Z"
   },
   {
     "id": "proj-004",
@@ -38,7 +38,7 @@
     "objective": "Design company-mirroring agent org structure with departments, QA, and knowledge layers",
     "status": "done",
     "priority": "high",
-    "currentStatus": "Full architecture documented in ARCHITECTURE.md. Phase 1 active: Boss + Codex.",
+    "currentStatus": "Full architecture documented. Phase 1 active: Boss + Codex.",
     "nextSteps": ["Promote agents to departments as workload demands"],
     "blockers": [],
     "updatedAt": "2026-03-06T13:15:00.000Z"
@@ -49,8 +49,8 @@
     "objective": "Build predictable system generating $100k/month in revenue",
     "status": "planning",
     "priority": "high",
-    "currentStatus": "Initial funnel structure documented. Awaiting detailed numbers from Orien on current acquisition performance.",
-    "nextSteps": ["Get current acquisition metrics from Orien", "Design full funnel architecture", "Model revenue targets"],
+    "currentStatus": "Initial funnel structure documented. Awaiting detailed metrics from Orien.",
+    "nextSteps": ["Get current acquisition metrics", "Design full funnel architecture", "Model revenue targets"],
     "blockers": ["Need current conversion rates, ad spend, and close rates from Orien"],
     "updatedAt": "2026-03-06T17:30:00.000Z"
   },
