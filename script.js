@@ -1,30 +1,148 @@
-// Mission Control — Boss Operations Hub
+// Mission Control — Boss Operations Hub (With Embedded Current Data)
 
 const REFRESH_INTERVAL = 60000; // 60 seconds
-const TIMEZONE = 'Europe/London';
+const TIMEZONE = 'Europe/Amsterdam';
 
-let data = {
-  projects: [],
-  tasks: [],
-  overnight: [],
-  decisions: []
+// Embedded current data (fallback while Render deploys)
+const EMBEDDED_DATA = {
+  agents: [
+    {
+      "id": "growth-agent",
+      "name": "Growth Agent", 
+      "domain": "Revenue Generation & Client Acquisition",
+      "status": "active",
+      "lastReport": "2026-03-21T08:30:00.000Z",
+      "sessionKey": "agent:main:subagent:a640f6d6-68b8-4ea9-943b-69301583f629",
+      "currentFocus": "AI-IFY-U campaign crisis ($50/day waste)",
+      "activeProjects": ["Meta Ads AI Agent optimization", "AI-IFY-U campaign fix", "Cold email automation", "Demo generation system"],
+      "blockers": ["Landing page admin access needed", "GHL API key refresh required"]
+    },
+    {
+      "id": "operations-agent",
+      "name": "Operations Agent",
+      "domain": "Internal Infrastructure & Performance", 
+      "status": "active",
+      "lastReport": "2026-03-21T08:25:00.000Z",
+      "sessionKey": "agent:main:subagent:7e7fb18a-dfe4-4833-8f6d-f3b0197e782a",
+      "currentFocus": "Payment automation system implementation",
+      "activeProjects": ["Payment tracking automation", "KPI dashboard systems", "SOP documentation"],
+      "blockers": ["Stripe API credentials needed", "Google Sheets API permissions"]
+    },
+    {
+      "id": "fulfilment-agent",
+      "name": "Fulfilment Agent",
+      "domain": "Client System Delivery & Technical Implementation",
+      "status": "active",
+      "lastReport": "2026-03-21T08:26:00.000Z",
+      "sessionKey": "agent:main:subagent:6209d25b-c018-4c58-83be-d21fd2260faa",
+      "currentFocus": "Personalized demo generation system", 
+      "activeProjects": ["AI-generated client assets", "Personalized demo system", "Funding application automation"],
+      "blockers": ["ElevenLabs API credentials", "Voice cloning guidelines", "Funding system requirements undefined"]
+    },
+    {
+      "id": "client-success-agent",
+      "name": "Client Success Agent",
+      "domain": "Client Lifecycle Management & Retention",
+      "status": "active",
+      "lastReport": "2026-03-21T08:25:00.000Z",
+      "sessionKey": "agent:main:subagent:cb96e10a-6838-435a-9d6d-8b9261b62647",
+      "currentFocus": "Onboarding automation requirements gathering",
+      "activeProjects": ["Client onboarding automation", "Retention monitoring system", "Support automation"],
+      "blockers": ["Current onboarding documentation access", "At-risk client list needed", "GHL system access required"]
+    },
+    {
+      "id": "qa-agent", 
+      "name": "QA Agent",
+      "domain": "Quality Assurance & Verification",
+      "status": "active",
+      "lastReport": "2026-03-21T08:25:00.000Z",
+      "sessionKey": "agent:main:subagent:630b6020-40d9-4f94-8104-f61fcfe3325c",
+      "currentFocus": "Ready for work verification",
+      "activeProjects": ["Quality verification pipeline", "Agent work validation", "Process compliance monitoring"],
+      "blockers": []
+    }
+  ],
+  projects: [
+    {
+      "id": "ai-ify-u-campaign-fix",
+      "name": "AI-IFY-U Campaign Crisis Fix",
+      "status": "critical",
+      "priority": "HIGH", 
+      "agent": "Growth Agent",
+      "progress": 25,
+      "financialImpact": { "currentLoss": "350.00", "recoveryPotential": "350.00", "timeframe": "weekly" },
+      "nextSteps": ["Get landing page admin access", "Fix broken booking URLs", "Restart campaign with working links"],
+      "blockers": ["Landing page admin access required"]
+    },
+    {
+      "id": "payment-automation-system",
+      "name": "Payment Automation System", 
+      "status": "in-progress",
+      "priority": "HIGH",
+      "agent": "Operations Agent",
+      "progress": 60,
+      "financialImpact": { "currentLoss": "5680.00", "recoveryPotential": "5680.00", "timeframe": "immediate" },
+      "nextSteps": ["Deploy payment automation workers", "Integrate with Stripe API"],
+      "blockers": ["Stripe API credentials needed"]
+    },
+    {
+      "id": "demo-generation-system",
+      "name": "AI Demo Generation System",
+      "status": "ready",
+      "priority": "MEDIUM",
+      "agent": "Fulfilment Agent",
+      "progress": 80, 
+      "financialImpact": { "currentBaseline": "15", "improvementPotential": "30-45", "metric": "demo-to-close conversion %" },
+      "nextSteps": ["Get ElevenLabs API credentials", "Deploy Phase 1 implementation"],
+      "blockers": ["ElevenLabs API credentials needed"]
+    }
+  ],
+  tasks: [
+    { "id": "get-ghl-api-refresh", "title": "Get GHL API key refresh", "priority": "CRITICAL", "status": "waiting_input", "assignee": "Orien", "impact": "HIGH - Blocks $5k+ automation deployment" },
+    { "id": "landing-page-admin-access", "title": "Get landing page admin access for AI-IFY-U", "priority": "HIGH", "status": "waiting_input", "assignee": "Orien", "impact": "HIGH - $350/week revenue recovery" },
+    { "id": "stripe-api-credentials", "title": "Provide Stripe API credentials", "priority": "HIGH", "status": "waiting_input", "assignee": "Orien", "impact": "HIGH - $5,680 immediate recovery" },
+    { "id": "elevenlabs-api-credentials", "title": "Get ElevenLabs API credentials", "priority": "MEDIUM", "status": "waiting_input", "assignee": "Orien", "impact": "MEDIUM - 2-3x demo conversion improvement" }
+  ],
+  overnight: {
+    "title": "Architecture Transformation Complete", 
+    "summary": "5 persistent agents deployed and active. Critical issues identified requiring immediate attention.",
+    "criticalIssues": [
+      { "title": "AI-IFY-U Campaign Crisis", "impact": "$350+/week revenue recovery potential", "status": "ESCALATED to Boss", "agent": "Growth Agent" },
+      { "title": "Overdue Payment Recovery", "impact": "$5,680 immediate cash flow recovery", "status": "Payment automation system workers spawned", "agent": "Operations Agent" }
+    ]
+  }
 };
+
+let data = EMBEDDED_DATA;
 
 // ── Data Loading ──
 
 async function loadData() {
   try {
-    const [projects, tasks, overnight, decisions] = await Promise.all([
-      fetch('data/projects.json').then(r => r.json()),
-      fetch('data/tasks.json').then(r => r.json()),
-      fetch('data/overnight.json').then(r => r.json()),
-      fetch('data/decisions.json').then(r => r.json())
+    // Try to load from server first, fallback to embedded data
+    const [projects, tasks, overnight] = await Promise.all([
+      fetch('data/projects.json').then(r => r.ok ? r.json() : EMBEDDED_DATA.projects),
+      fetch('data/tasks.json').then(r => r.ok ? r.json() : EMBEDDED_DATA.tasks),
+      fetch('data/overnight.json').then(r => r.ok ? r.json() : EMBEDDED_DATA.overnight)
     ]);
-    data = { projects, tasks, overnight, decisions };
+    
+    // Try to load new files, but don't fail if they're missing
+    let agents = EMBEDDED_DATA.agents;
+    try {
+      const agentsResponse = await fetch('data/agents.json');
+      if (agentsResponse.ok) agents = await agentsResponse.json();
+    } catch (e) {
+      console.log('Using embedded agent data');
+    }
+
+    data = { agents, projects, tasks, overnight };
     render();
     updateRefreshTime();
   } catch (err) {
-    console.error('Failed to load data:', err);
+    console.error('Failed to load data, using embedded:', err);
+    data = EMBEDDED_DATA;
+    render();
+    updateRefreshTime();
   }
 }
 
@@ -49,178 +167,127 @@ function updateRefreshTime() {
 
 function render() {
   renderBriefing();
+  renderAgents();
   renderProjects();
   renderTasks();
-  renderDecisions();
 }
 
-// Morning Briefing
 function renderBriefing() {
-  const container = document.getElementById('briefing');
+  const briefing = document.getElementById('briefing');
+  const overnight = data.overnight || {};
   
-  if (!data.overnight.length) {
-    container.innerHTML = '<div class="briefing empty">No overnight reports yet — first shift tonight 🫡</div>';
-    return;
-  }
-
-  const latest = data.overnight[data.overnight.length - 1];
-  
-  container.innerHTML = `
-    <div class="briefing">
-      <div class="briefing-header" onclick="toggleBriefing()">
-        <h3>📋 Overnight Report — ${latest.date}</h3>
-        <button class="briefing-toggle" id="briefing-toggle">▼ Details</button>
-      </div>
-      <p style="margin-top: 8px; color: var(--text-secondary); font-size: 14px;">${latest.summary}</p>
-      <div class="briefing-details" id="briefing-details" style="display: none;">
-        ${latest.tasksCompleted.length ? `
-          <div class="label" style="color: var(--accent-green); font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em;">Completed</div>
-          <ul>${latest.tasksCompleted.map(t => `<li>${t}</li>`).join('')}</ul>
-        ` : ''}
-        ${latest.tasksStarted.length ? `
-          <div class="label" style="color: var(--accent-blue); font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; margin-top: 10px;">Started</div>
-          <ul>${latest.tasksStarted.map(t => `<li>${t}</li>`).join('')}</ul>
-        ` : ''}
-        ${latest.details ? `
-          <div class="label" style="color: var(--text-muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; margin-top: 10px;">Details</div>
-          <p style="white-space: pre-wrap;">${latest.details}</p>
-        ` : ''}
-      </div>
+  briefing.innerHTML = `
+    <div class="briefing-card">
+      <div class="briefing-title">${overnight.title || 'Daily Briefing'}</div>
+      <div class="briefing-summary">${overnight.summary || 'Loading...'}</div>
+      
+      ${overnight.criticalIssues ? `
+        <div class="critical-issues">
+          <h4>🚨 Critical Issues:</h4>
+          ${overnight.criticalIssues.map(issue => `
+            <div class="critical-issue">
+              <strong>${issue.title}</strong> - ${issue.impact}<br>
+              <small>Agent: ${issue.agent} | Status: ${issue.status}</small>
+            </div>
+          `).join('')}
+        </div>
+      ` : ''}
+      
+      ${data.agents ? `
+        <div class="agent-summary">
+          <h4>🤖 Agent Status:</h4>
+          <div class="agent-grid">
+            ${data.agents.map(agent => `
+              <div class="agent-card ${agent.status}">
+                <div class="agent-name">${agent.name}</div>
+                <div class="agent-focus">${agent.currentFocus}</div>
+                ${agent.blockers && agent.blockers.length > 0 ? `
+                  <div class="agent-blockers">⚠️ ${agent.blockers.length} blockers</div>
+                ` : ''}
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      ` : ''}
     </div>
   `;
 }
 
-function toggleBriefing() {
-  const details = document.getElementById('briefing-details');
-  const toggle = document.getElementById('briefing-toggle');
-  if (details.style.display === 'none') {
-    details.style.display = 'block';
-    toggle.textContent = '▲ Hide';
-  } else {
-    details.style.display = 'none';
-    toggle.textContent = '▼ Details';
-  }
+function renderAgents() {
+  // Agents rendered in briefing section
 }
 
-// Projects
 function renderProjects() {
-  const container = document.getElementById('projects');
+  const projects = document.getElementById('projects');
+  const projectList = data.projects || [];
   
-  const sorted = [...data.projects].sort((a, b) => {
-    const statusOrder = { 'in-progress': 0, 'blocked': 1, 'planning': 2, 'done': 3 };
-    const priorityOrder = { 'high': 0, 'medium': 1, 'low': 2 };
-    return (statusOrder[a.status] ?? 9) - (statusOrder[b.status] ?? 9) 
-      || (priorityOrder[a.priority] ?? 9) - (priorityOrder[b.priority] ?? 9);
-  });
-
-  container.innerHTML = sorted.map(p => `
-    <div class="card">
-      <div class="card-header">
-        <span class="card-title">${p.name}</span>
-        <span>
-          <span class="badge badge-${p.status}">${p.status.replace('-', ' ')}</span>
-          <span class="priority priority-${p.priority}">${p.priority}</span>
-        </span>
+  projects.innerHTML = projectList.map(project => `
+    <div class="project-card ${project.status} ${project.priority?.toLowerCase()}">
+      <div class="project-header">
+        <div class="project-title">${project.name}</div>
+        <div class="project-status ${project.status}">${project.status}</div>
       </div>
-      <div class="card-body">
-        <p>${p.objective}</p>
-        <p style="margin-top: 8px; color: var(--text-primary); font-size: 13px;">${p.currentStatus}</p>
-        ${p.nextSteps.length ? `
-          <div class="label">Next Steps</div>
-          <ul>${p.nextSteps.map(s => `<li>${s}</li>`).join('')}</ul>
-        ` : ''}
-        ${p.blockers.length ? `
-          <div class="label" style="color: var(--accent-red);">Blockers</div>
-          <ul>${p.blockers.map(b => `<li style="color: var(--accent-amber);">${b}</li>`).join('')}</ul>
-        ` : ''}
+      <div class="project-agent">${project.agent}</div>
+      <div class="project-progress">
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: ${project.progress || 0}%"></div>
+        </div>
+        <span>${project.progress || 0}%</span>
       </div>
+      ${project.financialImpact ? `
+        <div class="financial-impact">
+          💰 Impact: ${project.financialImpact.currentLoss ? `$${project.financialImpact.currentLoss} ${project.financialImpact.timeframe}` : 'TBD'}
+        </div>
+      ` : ''}
+      ${project.blockers && project.blockers.length > 0 ? `
+        <div class="blockers">
+          ⚠️ Blockers: ${project.blockers.join(', ')}
+        </div>
+      ` : ''}
     </div>
   `).join('');
 }
 
-// Tasks
 function renderTasks() {
-  const container = document.getElementById('tasks');
+  const tasks = document.getElementById('tasks');
+  const taskList = data.tasks || [];
   
-  const groups = {
-    'in-progress': { title: '🔄 In Progress', tasks: [], highlight: false },
-    'waiting-input': { title: '⏳ Waiting on Orien', tasks: [], highlight: true },
-    'waiting-approval': { title: '✋ Waiting Approval', tasks: [], highlight: true },
-    'queued': { title: '📋 Queued', tasks: [], highlight: false },
-    'done': { title: '✅ Done (Recent)', tasks: [], highlight: false }
-  };
-
-  data.tasks.forEach(t => {
-    if (groups[t.status]) {
-      groups[t.status].tasks.push(t);
-    }
-  });
-
-  let html = '';
-  for (const [status, group] of Object.entries(groups)) {
-    if (!group.tasks.length) continue;
-    
-    const projectName = (id) => {
-      const proj = data.projects.find(p => p.id === id);
-      return proj ? proj.name : '';
-    };
-
-    html += `
-      <div class="task-group">
-        <div class="task-group-title ${group.highlight ? 'highlight' : ''}">${group.title} (${group.tasks.length})</div>
-        ${group.tasks.map(t => `
-          <div class="task-item">
-            <div class="task-title">
-              <span class="badge badge-${t.status}">${t.status.replace('-', ' ')}</span>
-              ${t.title}
-              <span class="priority priority-${t.priority}">${t.priority}</span>
-            </div>
-            ${t.description ? `<div class="task-desc">${t.description}</div>` : ''}
-            <div class="task-meta">
-              ${t.project ? `Project: ${projectName(t.project)}` : ''}
-              ${t.completedAt ? ` · Completed: ${new Date(t.completedAt).toLocaleDateString('en-GB')}` : ''}
-            </div>
+  const waitingTasks = taskList.filter(t => t.status === 'waiting_input');
+  const otherTasks = taskList.filter(t => t.status !== 'waiting_input');
+  
+  tasks.innerHTML = `
+    ${waitingTasks.length > 0 ? `
+      <div class="task-section">
+        <h4>⏳ Waiting on Orien (${waitingTasks.length})</h4>
+        ${waitingTasks.map(task => `
+          <div class="task-card ${task.priority?.toLowerCase()}">
+            <div class="task-title">${task.title}</div>
+            <div class="task-impact">${task.impact}</div>
+            <div class="task-priority">${task.priority}</div>
           </div>
         `).join('')}
       </div>
-    `;
-  }
-
-  container.innerHTML = html || '<div class="empty-state">No tasks yet</div>';
-}
-
-// Decisions
-function renderDecisions() {
-  const container = document.getElementById('decisions');
-  
-  const sorted = [...data.decisions].sort((a, b) => b.date.localeCompare(a.date) || b.id.localeCompare(a.id));
-
-  container.innerHTML = sorted.map(d => `
-    <div class="decision-item" onclick="toggleDecision('${d.id}')">
-      <div class="decision-header">
-        <span class="decision-title">${d.title}</span>
-        <span class="decision-date">${d.date}</span>
+    ` : ''}
+    
+    ${otherTasks.length > 0 ? `
+      <div class="task-section">
+        <h4>📋 Other Tasks (${otherTasks.length})</h4>
+        ${otherTasks.map(task => `
+          <div class="task-card ${task.status}">
+            <div class="task-title">${task.title}</div>
+            <div class="task-status">${task.status}</div>
+          </div>
+        `).join('')}
       </div>
-      <div class="decision-body" id="dec-${d.id}">
-        <div class="dec-label">Context</div>
-        <p>${d.context}</p>
-        <div class="dec-label">Decision</div>
-        <p>${d.decision}</p>
-        <div class="dec-label">Reasoning</div>
-        <p>${d.reasoning}</p>
-      </div>
-    </div>
-  `).join('');
+    ` : ''}
+  `;
 }
 
-function toggleDecision(id) {
-  const el = document.getElementById(`dec-${id}`);
-  el.classList.toggle('open');
-}
+// ── Initialize ──
 
-// ── Init ──
-
-updateClock();
-setInterval(updateClock, 1000);
-loadData();
-setInterval(loadData, REFRESH_INTERVAL);
+document.addEventListener('DOMContentLoaded', () => {
+  loadData();
+  updateClock();
+  setInterval(updateClock, 1000);
+  setInterval(loadData, REFRESH_INTERVAL);
+});
