@@ -1,110 +1,127 @@
 [
   {
-    "id": "proj-001",
-    "name": "Mission Control Dashboard",
-    "objective": "Build a custom operations hub for tracking all projects, tasks, and overnight work",
-    "status": "done",
-    "priority": "high",
-    "currentStatus": "V1 complete and deployed to Render. Auto-updates via GitHub push. Live at mission-control-vowh.onrender.com",
+    "id": "ai-ify-u-campaign-fix",
+    "name": "AI-IFY-U Campaign Crisis Fix",
+    "description": "Fix broken booking URLs causing $48.77+/day budget waste with 0% conversion",
+    "status": "critical",
+    "priority": "HIGH",
+    "agent": "Growth Agent",
+    "progress": 25,
+    "financialImpact": {
+      "currentLoss": "350.00",
+      "recoveryPotential": "350.00",
+      "timeframe": "weekly"
+    },
     "nextSteps": [
-      "Auto-update data from agent activity (in progress)"
-    ],
-    "blockers": [],
-    "updatedAt": "2026-03-17T08:38:00.000Z"
-  },
-  {
-    "id": "proj-002",
-    "name": "Client Onboarding Redesign",
-    "objective": "Reduce onboarding TTV from 21 days to 5 days",
-    "status": "done",
-    "priority": "high",
-    "currentStatus": "Achieved \u2014 SOPs, back-end tech team, and account managers in place. Future goal: automate with AI/agents.",
-    "nextSteps": [
-      "Explore automation opportunities to reduce people-dependency"
-    ],
-    "blockers": [],
-    "updatedAt": "2026-03-06T13:00:00.000Z"
-  },
-  {
-    "id": "proj-003",
-    "name": "AI Website Demo Generator",
-    "objective": "Automatically generate AI-enabled demo websites for prospects to increase conversion rates",
-    "status": "done",
-    "priority": "high",
-    "currentStatus": "\u2705 v2.0 LIVE. Self-hosted AI cloner fully working. First successful end-to-end test 2026-03-17 (footprint-tools.com \u2192 30 seconds). Both Anthropic + OpenAI keys configured on Render.",
-    "nextSteps": [
-      "Fix GHL API auth (expired JWT \u2014 need fresh key)",
-      "Connect email workflow to GHL",
-      "Set up custom demo domain",
-      "Tune AI prompts for better clone quality"
+      "Get landing page admin access",
+      "Fix broken booking URLs",
+      "Restart campaign with working links",
+      "Monitor conversion improvement"
     ],
     "blockers": [
-      "GHL API key expired (401 Invalid JWT)"
+      "Landing page admin access required",
+      "Campaign URL debugging needed"
     ],
-    "updatedAt": "2026-03-17T08:00:00.000Z"
+    "updatedAt": "2026-03-21T08:30:00.000Z"
   },
   {
-    "id": "proj-004",
-    "name": "Agent Architecture",
-    "objective": "Design company-mirroring agent org structure with departments, QA, and knowledge layers",
-    "status": "in-progress",
-    "priority": "high",
-    "currentStatus": "Full architecture documented. Phase 1 active: Boss (Opus) + sub-agents (Sonnet/Haiku). Model-per-agent strategy agreed. Agent spec template defined.",
+    "id": "payment-automation-system",
+    "name": "Payment Automation System",
+    "description": "Automate payment tracking and overdue recovery to eliminate 2hrs/day manual work",
+    "status": "in-progress", 
+    "priority": "HIGH",
+    "agent": "Operations Agent",
+    "progress": 60,
+    "financialImpact": {
+      "currentLoss": "5680.00",
+      "recoveryPotential": "5680.00", 
+      "timeframe": "immediate"
+    },
     "nextSteps": [
-      "Promote agents to departments as workload demands",
-      "Build agent spec template"
-    ],
-    "blockers": [],
-    "updatedAt": "2026-03-17T08:10:00.000Z"
-  },
-  {
-    "id": "proj-005",
-    "name": "Client Acquisition System",
-    "objective": "Build predictable system generating $100k/month in revenue",
-    "status": "planning",
-    "priority": "high",
-    "currentStatus": "Initial funnel structure documented. Meta Ads data now accessible \u2014 will feed into acquisition modelling.",
-    "nextSteps": [
-      "Get current conversion rates and close rates from Orien",
-      "Design full funnel architecture",
-      "Model revenue targets"
+      "Deploy payment automation workers",
+      "Integrate with Stripe API",
+      "Set up automated follow-up sequences",
+      "Test recovery workflows"
     ],
     "blockers": [
-      "Need current conversion rates, close rates from Orien"
+      "Stripe API credentials needed",
+      "Google Sheets API permissions required"
     ],
-    "updatedAt": "2026-03-17T08:35:00.000Z"
+    "updatedAt": "2026-03-21T08:25:00.000Z"
   },
   {
-    "id": "proj-006",
-    "name": "SOP Library",
-    "objective": "Create structured SOP framework for all core business processes",
-    "status": "planning",
-    "priority": "medium",
-    "currentStatus": "Not started. Framework design pending.",
+    "id": "demo-generation-system",
+    "name": "AI Demo Generation System",
+    "description": "Automated personalized demo websites for prospects to increase conversion rates",
+    "status": "ready",
+    "priority": "MEDIUM",
+    "agent": "Fulfilment Agent", 
+    "progress": 80,
+    "financialImpact": {
+      "currentBaseline": "15",
+      "improvementPotential": "30-45",
+      "metric": "demo-to-close conversion %"
+    },
     "nextSteps": [
-      "Design SOP template structure",
-      "Identify core processes to document first"
+      "Get ElevenLabs API credentials",
+      "Implement voice cloning guidelines",
+      "Deploy Phase 1 implementation",
+      "Test with live prospects"
     ],
-    "blockers": [],
-    "updatedAt": "2026-03-06T13:00:00.000Z"
+    "blockers": [
+      "ElevenLabs API credentials needed",
+      "Voice guidelines definition required"
+    ],
+    "updatedAt": "2026-03-21T08:26:00.000Z"
   },
   {
-    "id": "proj-007",
+    "id": "client-retention-intervention",
+    "name": "Client Retention Intervention",
+    "description": "Save 3 at-risk clients and improve onboarding process to increase lifetime value",
+    "status": "planning",
+    "priority": "MEDIUM",
+    "agent": "Client Success Agent",
+    "progress": 40,
+    "financialImpact": {
+      "atRiskValue": "2000.00",
+      "retentionPotential": "2000.00",
+      "timeframe": "immediate"
+    },
+    "nextSteps": [
+      "Get current onboarding documentation",
+      "Identify specific at-risk client issues",
+      "Deploy intervention strategies",
+      "Monitor retention improvement"
+    ],
+    "blockers": [
+      "At-risk client list needed",
+      "Current onboarding docs access required",
+      "GHL system access needed"
+    ],
+    "updatedAt": "2026-03-21T08:25:00.000Z"
+  },
+  {
+    "id": "meta-ads-ai-agent", 
     "name": "Meta Ads AI Agent",
-    "objective": "Fully autonomous Meta Ads management \u2014 reporting, creative generation, auto-publishing, and feedback loops",
-    "status": "in-progress",
-    "priority": "high",
-    "currentStatus": "\u2705 Phase 1 LIVE. Meta API token connected (system user, no expiry). Deployed to Render with env vars. Daily cron report set for 7am GMT+1 \u2192 Slack (#meta-ads-reports) + WhatsApp. Slack channel created in internal workspace. Sample report sent successfully.",
+    "description": "Fully autonomous Meta Ads management with 4-phase optimization cycle",
+    "status": "planning",
+    "priority": "MEDIUM",
+    "agent": "Growth Agent",
+    "progress": 30,
+    "financialImpact": {
+      "currentCPL": "58.05",
+      "targetCPL": "50.00", 
+      "metric": "cost optimization"
+    },
     "nextSteps": [
-      "Phase 1: Fix WhatsApp delivery (linked but listener issue)",
-      "Phase 2: Creative Engine \u2014 need Google Drive API credentials",
-      "Phase 3: Auto-Publisher \u2014 need campaign structure preferences",
-      "Phase 4: Feedback Loop \u2014 need Fathom API access"
+      "Get Meta API credentials",
+      "Deploy Analyst phase",
+      "Implement Creative Engine",
+      "Set up Auto-Publisher"
     ],
     "blockers": [
-      "WhatsApp listener not connecting",
-      "Google Drive credentials for Phase 2"
+      "Meta API credentials awaiting from Orien"
     ],
-    "updatedAt": "2026-03-17T09:45:00.000Z"
+    "updatedAt": "2026-03-21T08:30:00.000Z"
   }
 ]

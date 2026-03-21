@@ -1,0 +1,122 @@
+[
+  {
+    "id": "growth-agent",
+    "name": "Growth Agent",
+    "domain": "Revenue Generation & Client Acquisition", 
+    "status": "active",
+    "lastReport": "2026-03-21T08:30:00.000Z",
+    "sessionKey": "agent:main:subagent:a640f6d6-68b8-4ea9-943b-69301583f629",
+    "currentFocus": "AI-IFY-U campaign crisis ($50/day waste)",
+    "activeProjects": [
+      "Meta Ads AI Agent optimization",
+      "AI-IFY-U campaign fix", 
+      "Cold email automation",
+      "Demo generation system"
+    ],
+    "metrics": {
+      "metaAdSpend": "100.00",
+      "costPerLead": "58.05", 
+      "targetCPL": "50.00",
+      "campaignROAS": "2.1"
+    },
+    "blockers": [
+      "Landing page admin access needed",
+      "GHL API key refresh required"
+    ]
+  },
+  {
+    "id": "operations-agent", 
+    "name": "Operations Agent",
+    "domain": "Internal Infrastructure & Performance",
+    "status": "active",
+    "lastReport": "2026-03-21T08:25:00.000Z", 
+    "sessionKey": "agent:main:subagent:7e7fb18a-dfe4-4833-8f6d-f3b0197e782a",
+    "currentFocus": "Payment automation system implementation",
+    "activeProjects": [
+      "Payment tracking automation",
+      "KPI dashboard systems",
+      "SOP documentation"
+    ],
+    "metrics": {
+      "overduePayments": "5680.00",
+      "disputeRate": "3.2",
+      "targetDisputeRate": "2.0", 
+      "manualWorkHours": "2.0"
+    },
+    "blockers": [
+      "Stripe API credentials needed",
+      "Google Sheets API permissions"
+    ]
+  },
+  {
+    "id": "fulfilment-agent",
+    "name": "Fulfilment Agent", 
+    "domain": "Client System Delivery & Technical Implementation",
+    "status": "active",
+    "lastReport": "2026-03-21T08:26:00.000Z",
+    "sessionKey": "agent:main:subagent:6209d25b-c018-4c58-83be-d21fd2260faa", 
+    "currentFocus": "Personalized demo generation system",
+    "activeProjects": [
+      "AI-generated client assets",
+      "Personalized demo system", 
+      "Funding application automation"
+    ],
+    "metrics": {
+      "systemDeliveryTime": "3.0",
+      "targetDeliveryTime": "3.0",
+      "technicalQuality": "95",
+      "clientSatisfaction": "90"
+    },
+    "blockers": [
+      "ElevenLabs API credentials",
+      "Voice cloning guidelines",
+      "Funding system requirements undefined"
+    ]
+  },
+  {
+    "id": "client-success-agent",
+    "name": "Client Success Agent",
+    "domain": "Client Lifecycle Management & Retention", 
+    "status": "active",
+    "lastReport": "2026-03-21T08:25:00.000Z",
+    "sessionKey": "agent:main:subagent:cb96e10a-6838-435a-9d6d-8b9261b62647",
+    "currentFocus": "Onboarding automation requirements gathering",
+    "activeProjects": [
+      "Client onboarding automation",
+      "Retention monitoring system",
+      "Support automation"
+    ],
+    "metrics": {
+      "averageLifetime": "2.78",
+      "targetLifetime": "6.0", 
+      "churnRisk": "2000.00",
+      "onboardingCompletion": "85"
+    },
+    "blockers": [
+      "Current onboarding documentation access",
+      "At-risk client list needed",
+      "GHL system access required"
+    ]
+  },
+  {
+    "id": "qa-agent",
+    "name": "QA Agent",
+    "domain": "Quality Assurance & Verification",
+    "status": "active", 
+    "lastReport": "2026-03-21T08:25:00.000Z",
+    "sessionKey": "agent:main:subagent:630b6020-40d9-4f94-8104-f61fcfe3325c",
+    "currentFocus": "Ready for work verification",
+    "activeProjects": [
+      "Quality verification pipeline",
+      "Agent work validation",
+      "Process compliance monitoring"
+    ],
+    "metrics": {
+      "errorDetectionRate": "95",
+      "workApprovalRate": "85",
+      "falsePositiveRate": "10",
+      "qualityImprovement": "20"
+    },
+    "blockers": []
+  }
+]

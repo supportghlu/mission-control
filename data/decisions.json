@@ -1,74 +1,62 @@
 [
   {
-    "id": "dec-001",
-    "date": "2026-03-06",
-    "title": "Codex as primary coding agent",
-    "context": "Needed a dedicated coding muscle for building internal tools and infrastructure",
-    "decision": "Set up Codex via ACP with OpenAI API key as the default coding agent",
-    "reasoning": "Highest leverage addition — dedicated coding agent for building tools, automations, and prototypes"
+    "id": "agent-architecture-deployment",
+    "title": "Deploy Complete Agent Architecture",
+    "description": "Transform from single Boss bottleneck to 5-agent specialized organization",
+    "decision": "APPROVED - Architecture successfully implemented",
+    "rationale": "Single agent handling 6+ parallel projects caused context bloat and prevented focus. Agent specialization enables parallel execution with quality gates.",
+    "impact": {
+      "positive": "5x parallel execution capacity, specialized expertise, quality verification",
+      "risks": "Coordination complexity, resource conflicts"
+    },
+    "implementedBy": "Boss",
+    "decidedAt": "2026-03-21T08:00:00.000Z",
+    "status": "IMPLEMENTED",
+    "results": "All 5 agents active with role memory and governance frameworks"
   },
   {
-    "id": "dec-002",
-    "date": "2026-03-06",
-    "title": "Hold on Grok/xAI integration",
-    "context": "Grok offers real-time X/Twitter data for social trend monitoring",
-    "decision": "Defer until a social monitoring project is active",
-    "reasoning": "No active project requiring social data. Will revisit when relevant."
+    "id": "persistence-system-implementation",
+    "title": "Implement File-Based Agent Persistence", 
+    "description": "Move from conversation-dependent memory to file-based persistence system",
+    "decision": "APPROVED - Full file-based memory implemented",
+    "rationale": "Context window limitations (68k+ tokens) and agent resurrection needs require persistent memory independent of conversation history.",
+    "impact": {
+      "positive": "Unlimited agent memory, automatic resurrection, token management", 
+      "risks": "File synchronization complexity"
+    },
+    "implementedBy": "Boss",
+    "decidedAt": "2026-03-21T07:45:00.000Z", 
+    "status": "IMPLEMENTED",
+    "results": "All agents have ROLE.md, SELF-GOVERNANCE.md, and memory persistence"
   },
   {
-    "id": "dec-003",
-    "date": "2026-03-06",
-    "title": "Company-mirroring agent architecture",
-    "context": "Needed a scalable agent structure that maps to business functions",
-    "decision": "Designed 5-department hierarchy: Growth, Fulfilment, Client Success, Operations, Research & Intelligence with QA and Knowledge layers",
-    "reasoning": "Mirrors real company org structure — easier to scale, reason about, and align with how the business operates"
+    "id": "direct-agent-communication",
+    "title": "Enable Direct Orien-Agent Communication",
+    "description": "Allow Orien to communicate directly with agents for requirements gathering",
+    "decision": "APPROVED - Direct communication enabled for efficiency",
+    "rationale": "Boss mediation for requirements gathering creates unnecessary bottleneck. Direct communication enables faster clarification while maintaining coordination oversight.",
+    "impact": {
+      "positive": "Faster requirements gathering, reduced Boss bottleneck",
+      "risks": "Potential coordination gaps, conflicting priorities"
+    },
+    "implementedBy": "Boss",
+    "decidedAt": "2026-03-21T08:15:00.000Z",
+    "status": "ACTIVE",
+    "results": "All agent sessions available for direct communication, Boss monitoring coordination"
   },
   {
-    "id": "dec-004",
-    "date": "2026-03-06",
-    "title": "Phase 1: Boss + Codex only",
-    "context": "Full agent architecture defined but workload doesn't yet justify multiple persistent agents",
-    "decision": "Start with Boss playing all roles, promote agents when workload demands it",
-    "reasoning": "Don't over-engineer on day one. Earn the complexity through volume of work."
-  },
-  {
-    "id": "dec-005",
-    "date": "2026-03-16",
-    "title": "Self-hosted AI cloner over Replit",
-    "context": "Replit browser automation was fragile and unreliable. No public API for Replit Agent.",
-    "decision": "Built self-hosted AI pipeline: scrape → AI generate → inject widgets → deploy. Dropped Replit entirely.",
-    "reasoning": "Full control, no third-party dependency, faster execution (30s vs minutes), easier to maintain and scale."
-  },
-  {
-    "id": "dec-006",
-    "date": "2026-03-06",
-    "title": "Strategic partnership working model",
-    "context": "Defining how Boss and Orien collaborate",
-    "decision": "Proactive autonomous collaborator. Overnight work during 19:00-08:00 GMT+1. Morning reports + WhatsApp summary.",
-    "reasoning": "Orien wants to wake up to progress. Internal work = autonomous, external-facing = ask first."
-  },
-  {
-    "id": "dec-007",
-    "date": "2026-03-17",
-    "title": "Model-per-agent cost strategy",
-    "context": "Running all agents on Opus is expensive and unnecessary for routine tasks",
-    "decision": "Boss stays on Opus (strategic work). Sub-agents use Sonnet (analysis/reasoning) or Haiku (execution). Each agent spec defines its model.",
-    "reasoning": "Like staffing — senior operator (Opus) coordinates, specialists (Sonnet/Haiku) execute defined tasks. 5-75x cost savings on sub-agents."
-  },
-  {
-    "id": "dec-008",
-    "date": "2026-03-17",
-    "title": "Meta Ads AI Agent — 4-phase build",
-    "context": "Orien wants fully autonomous Meta Ads management inspired by a 7-figure autonomous ad agent",
-    "decision": "Phase 1: Analyst (daily reports) → Phase 2: Creative Engine (Google Drive + AI gen) → Phase 3: Auto-Publisher → Phase 4: Feedback Loop (Fathom)",
-    "reasoning": "Each phase delivers standalone value. Phase 1 is immediately useful and validates the Meta API integration before building auto-publishing."
-  },
-  {
-    "id": "dec-009",
-    "date": "2026-03-17",
-    "title": "Google Drive over Dropbox for content intake",
-    "context": "Original plan used Dropbox for raw content upload. Orien uses Google Drive.",
-    "decision": "Use Google Drive API instead of Dropbox for the creative content pipeline",
-    "reasoning": "Use what's already in the stack. No need to introduce a new tool."
+    "id": "qa-verification-gates",
+    "title": "Implement QA Agent Verification Gates",
+    "description": "All agent work must pass QA verification before delivery to Orien",
+    "decision": "APPROVED - Quality gates mandatory for all deliverables", 
+    "rationale": "Agent autonomy requires quality verification to maintain standards. QA Agent provides independent verification using devils advocate protocol.",
+    "impact": {
+      "positive": "Consistent quality, error prevention, process improvement",
+      "risks": "Potential delays, QA bottleneck if overloaded"
+    },
+    "implementedBy": "Boss",
+    "decidedAt": "2026-03-21T08:20:00.000Z",
+    "status": "ACTIVE",
+    "results": "QA Agent ready with verification pipeline, devils advocate protocol loaded"
   }
 ]
