@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mission Control 🫡</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Enhanced styles for new features */
+    .agent-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+    
+    .agent-card {
+      background: #2a2a2a;
+      border-radius: 6px;
+      padding: 10px;
+      border-left: 3px solid #4CAF50;
+    }
+    
+    .agent-card.critical { border-left-color: #f44336; }
+    .agent-card.warning { border-left-color: #ff9800; }
+    
+    .agent-name {
+      font-weight: bold;
+      color: #fff;
+      margin-bottom: 5px;
+    }
+    
+    .agent-focus {
+      font-size: 0.85em;
+      color: #ccc;
+      margin-bottom: 5px;
+    }
+    
+    .agent-blockers {
+      font-size: 0.8em;
+      color: #ff9800;
+    }
+    
+    .critical-issues {
+      margin: 15px 0;
+      padding: 15px;
+      background: rgba(244, 67, 54, 0.1);
+      border-radius: 6px;
+      border-left: 4px solid #f44336;
+    }
+    
+    .critical-issue {
+      margin-bottom: 10px;
+      color: #fff;
+    }
+    
+    .critical-issue:last-child {
+      margin-bottom: 0;
+    }
+    
+    .financial-impact {
+      color: #4CAF50;
+      font-weight: bold;
+      margin-top: 5px;
+    }
+    
+    .task-section {
+      margin-bottom: 20px;
+    }
+    
+    .task-section h4 {
+      color: #fff;
+      margin: 0 0 10px 0;
+      padding: 8px 12px;
+      background: #333;
+      border-radius: 4px;
+    }
+    
+    .task-impact {
+      font-size: 0.85em;
+      color: #ccc;
+      margin-top: 5px;
+    }
+    
+    .project-card.critical {
+      border-left: 4px solid #f44336;
+    }
+    
+    .project-card.high {
+      border-left: 4px solid #ff9800;
+    }
+    
+    .project-card.medium {
+      border-left: 4px solid #2196F3;
+    }
+    
+    .progress-bar {
+      background: #333;
+      height: 6px;
+      border-radius: 3px;
+      overflow: hidden;
+      flex: 1;
+      margin-right: 8px;
+    }
+    
+    .progress-fill {
+      height: 100%;
+      background: #4CAF50;
+      transition: width 0.3s ease;
+    }
+    
+    .project-progress {
+      display: flex;
+      align-items: center;
+      margin: 8px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-left">
+      <h1>Mission Control 🫡</h1>
+      <div class="subtitle">Boss Operations Hub — GHLU</div>
+    </div>
+    <div class="header-right">
+      <div class="clock" id="clock">--:--:--</div>
+      <div class="date" id="date">Loading...</div>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Morning Briefing with Agent Status -->
+    <section>
+      <div class="section-header">
+        <span class="icon">☀️</span> Operations Briefing
+      </div>
+      <div id="briefing"></div>
+    </section>
+
+    <!-- Projects & Tasks Grid -->
+    <div class="grid">
+      <section>
+        <div class="section-header">
+          <span class="icon">🚀</span> Projects
+        </div>
+        <div id="projects"></div>
+      </section>
+
+      <section>
+        <div class="section-header">
+          <span class="icon">📋</span> Task Queue
+        </div>
+        <div id="tasks"></div>
+      </section>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <span id="refresh-time">Loading...</span> · Auto-refreshes every 60s · Enhanced with Agent Coordination
+  </footer>
+
+  <script src="script-with-embedded-data.js"></script>
+</body>
+</html>
